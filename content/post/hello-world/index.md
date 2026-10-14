@@ -1,20 +1,43 @@
+
 ---
-title: Hello World
-description: Welcome to Hugo Theme Stack
-slug: hello-world
-date: 2022-03-06 00:00:00+0000
-image: cover.jpg
+title: "我的第一篇博客"
+description: "欢迎来到我的个人博客"
+date: 2026-10-14T21:00:00+09:00
+draft: false
 categories:
-    - Example Category
+  - 随笔
 tags:
-    - Example Tag
-weight: 1       # You can add weight to some posts to override the default sorting (date descending)
+  - Hugo
+  - 生活
+  - 博客
 ---
 
-Welcome to Hugo theme Stack. This is your first post. Edit or delete it, then start writing!
+# 你好，世界！
 
-For more information about this theme, check the documentation: https://stack.jimmycai.com/
+欢迎来到我的个人博客。
 
-Want a site like this? Check out [hugo-theme-stack-stater](https://github.com/CaiJimmy/hugo-theme-stack-starter)
+这是我使用 Hugo 和 Stack 搭建的第一个网站。
 
-> Photo by [Pawel Czerwinski](https://unsplash.com/@pawel_czerwinski) on [Unsplash](https://unsplash.com/)
+## 为什么建立这个博客？
+
+我希望用这个网站记录自己的生活、学习经历，以及一些计算机技术相关的内容。
+
+以后计划主要发布以下内容：
+
+- 日本生活与日常记录
+- Python 和 AI 学习笔记
+- 计算机技术研究
+- 游戏及其他个人兴趣
+
+## 一段 Python 代码
+
+```python
+def hello():
+    print("Hello, World!")
+
+hello()
+```
+
+## 未来计划
+
+我希望能够长期维护这个博客，记录自己在不同阶段的经历与想法。
