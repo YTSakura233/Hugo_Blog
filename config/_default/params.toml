@@ -49,9 +49,26 @@ SortBy              = "default"
     default = "auto"
 
 ## Comments
+
 [comments]
-    enabled  = false
-    provider = "disqus"
+    enabled = true
+    provider = "giscus"
+
+    [comments.giscus]
+        repo = "YTSakura233/Hugo_Blog"
+        repoID = "R_kgDOVJH8qQ"
+        category = "Announcements"
+        categoryID = "DIC_kwDOVJH8qc4DId2Y"
+        mapping = "pathname"
+        strict = 0
+        lightTheme = "light"
+        darkTheme = "dark_dimmed"
+        reactionsEnabled = 1
+        emitMetadata = 0
+        inputPosition = "top"
+        lang = "zh-CN"
+        loading = "lazy"
+
 
     # See all the available configurations at https://github.com/CaiJimmy/hugo-theme-stack/blob/master/config/_default/params.toml
     # Copy the configurations you need from there and paste it here.
