@@ -1,0 +1,126 @@
+{{- $radio := hugo.Data.jq3nei_radio -}}
+{{- if not $radio -}}
+  {{- errorf "radio-station: missing data/jq3nei_radio.json. Copy the data file into your Hugo project." -}}
+{{- else -}}
+{{- $email := .Get "email" | default $radio.email -}}
+{{- if ne .Page.Layout "radio-station" -}}
+<link rel="stylesheet" href="{{ "radio-station/radio-station.css" | relURL }}">
+{{- end }}
+<section id="jq3nei-radio" aria-labelledby="jr-callsign">
+  <header class="jr-hero">
+    <div class="jr-hero-copy">
+      <p class="jr-eyebrow">JAPAN AMATEUR RADIO STATION</p>
+      <h1 id="jr-callsign" class="jr-callsign">{{ $radio.callsign }}</h1>
+      <p class="jr-tagline" lang="zh-CN">从京都，向世界发出一声 CQ。</p>
+      <p class="jr-subtitle" lang="en">A little station in Kyoto.<br>A world of connections.</p>
+      <div class="jr-meta" aria-label="台站区域信息">
+        <span class="jr-pill">KYOTO, JAPAN</span>
+        <span class="jr-pill">CQ {{ $radio.cq_zone }}</span>
+        <span class="jr-pill">ITU {{ $radio.itu_zone }}</span>
+      </div>
+    </div>
+    <figure class="jr-qsl-card">
+      <a href="{{ $radio.qsl_image }}" target="_blank" rel="noopener noreferrer" aria-label="查看 JQ3NEI QSL 卡片原图（新窗口）">
+        <img src="{{ $radio.qsl_image }}" alt="JQ3NEI QSL 卡片正面，Ver. MIKU，京都，日本" width="1748" height="1181" decoding="async">
+      </a>
+      <figcaption><span>QSL CARD / Ver. MIKU</span><span>JQ3NEI · KYOTO</span></figcaption>
+    </figure>
+  </header>
+
+  <nav class="jr-nav" aria-label="无线电页面导航">
+    <a href="#jr-station">台站介绍</a>
+    <a href="#jr-qsl">QSL 交换</a>
+    <a href="#jr-log">通联记录</a>
+    <a href="#jr-awards">获奖与荣誉</a>
+  </nav>
+
+  <section id="jr-station" class="jr-section" aria-labelledby="jr-station-title">
+    <div class="jr-section-heading">
+      <div><p class="jr-eyebrow">MEET THE OPERATOR</p><h2 id="jr-station-title">你好 · こんにちは · Hello</h2></div>
+      <p>BEIJING → KYOTO</p>
+    </div>
+    <dl class="jr-facts">
+      <div class="jr-fact"><dt>QTH / 所在地</dt><dd>{{ $radio.qth }}</dd></div>
+      <div class="jr-fact"><dt>LICENSED / 执照年份</dt><dd>{{ $radio.licensed }}</dd></div>
+      <div class="jr-fact"><dt>RADIO / 无线电设备</dt><dd>{{ delimit $radio.radios " · " }}</dd></div>
+    </dl>
+    <div class="jr-intros">
+      {{- range $radio.introductions }}
+      <article class="jr-intro" lang="{{ .lang }}" aria-label="{{ .label }}台站介绍">
+        <h3 class="jr-language">{{ .label }}</h3>
+        <p>{{ .text }}</p>
+      </article>
+      {{- end }}
+    </div>
+  </section>
+
+  <section id="jr-qsl" class="jr-section" aria-labelledby="jr-qsl-title">
+    <div class="jr-section-heading">
+      <div><p class="jr-eyebrow">QSL EXCHANGE</p><h2 id="jr-qsl-title">让一次通联，成为一张来信。</h2></div>
+    </div>
+    <div class="jr-qsl-banner">
+      <p class="jr-eyebrow">DIRECT ONLY · NO BUREAU</p>
+      <h3>欢迎交换 QSL 卡片</h3>
+      <p>请直接邮寄。交换卡片无需支付回寄邮费；请在寄出前通过 Email 与我联系。</p>
+    </div>
+    <div class="jr-qsl-rules">
+      {{- range $radio.qsl_rules }}
+      <article class="jr-rule" lang="{{ .lang }}" aria-label="{{ .label }} QSL 交换说明">
+        <h3 class="jr-language">{{ .label }}</h3>
+        <p><strong>{{ .direct }}</strong></p>
+        <p>{{ .postage }}</p>
+        <p>{{ .contact }}</p>
+      </article>
+      {{- end }}
+    </div>
+    {{- with $email }}
+    <p class="jr-email"><a href="mailto:{{ . }}">Email · {{ . }}</a></p>
+    {{- end }}
+  </section>
+
+  <section id="jr-log" class="jr-section" aria-labelledby="jr-log-title">
+    <div class="jr-section-heading">
+      <div><p class="jr-eyebrow">ON THE AIR / CLUB LOG</p><h2 id="jr-log-title">最近的通联</h2></div>
+      <a class="jr-log-link" href="https://clublog.org/last10.php?call={{ $radio.callsign }}" target="_blank" rel="noopener noreferrer">在 Club Log 查看 ↗</a>
+    </div>
+    <div class="jr-log-grid">
+      <article class="jr-log-panel" aria-labelledby="jr-latest-title">
+        <div class="jr-log-header"><p class="jr-eyebrow">LATEST 10 QSOs</p><h3 id="jr-latest-title">最近十次通联</h3></div>
+        <iframe class="jr-log-frame" title="JQ3NEI — Club Log 最近十次通联" src="https://clublog.org/last10_iframe.php?call={{ $radio.callsign }}" width="450" height="350" loading="lazy"></iframe>
+      </article>
+      <article class="jr-log-panel" aria-labelledby="jr-oqrs-title">
+        <div class="jr-log-header"><p class="jr-eyebrow">ONLINE QSL REQUEST</p><h3 id="jr-oqrs-title">QSL 在线申请 · OQRS</h3></div>
+        <iframe class="jr-log-frame jr-log-frame--oqrs" title="JQ3NEI — Club Log OQRS 在线申请" src="https://clublog.org/oqrs_iframe.php?call={{ $radio.callsign }}" width="380" height="220" loading="lazy"></iframe>
+        <div class="jr-qsl-rules jr-qsl-rules--compact">
+          {{- range $radio.qsl_rules }}
+          <p class="jr-rule" lang="{{ .lang }}"><strong>{{ .label }}</strong><br>{{ .direct }} {{ .postage }} {{ .contact }}</p>
+          {{- end }}
+        </div>
+        {{- with $email }}
+        <p class="jr-email"><a href="mailto:{{ . }}">Email · {{ . }}</a></p>
+        {{- end }}
+      </article>
+    </div>
+  </section>
+
+  <section id="jr-awards" class="jr-section" aria-labelledby="jr-awards-title">
+    <div class="jr-section-heading">
+      <div><p class="jr-eyebrow">AWARDS &amp; ACHIEVEMENTS</p><h2 id="jr-awards-title">获奖与荣誉</h2></div>
+      <p>アワード · Awards</p>
+    </div>
+    <p>点击图片查看原图。<span lang="en">Click an image to view it in full size.</span></p>
+    <div class="jr-awards">
+      {{- range $index, $award := $radio.awards }}
+      <figure class="jr-award">
+        <a class="jr-award-image" href="{{ $award.url }}" target="_blank" rel="noopener noreferrer" aria-label="查看{{ $award.caption }}原图（新窗口）">
+          <img src="{{ $award.url }}" alt="{{ $award.caption }}" loading="lazy" decoding="async">
+        </a>
+        <figcaption class="jr-award-caption"><span>{{ $radio.callsign }} · {{ printf "%02d" (add $index 1) }}</span><a href="{{ $award.url }}" target="_blank" rel="noopener noreferrer" aria-label="查看{{ $award.caption }}原图（新窗口）">查看原图 ↗</a></figcaption>
+      </figure>
+      {{- end }}
+    </div>
+  </section>
+
+  <footer class="jr-closing"><p class="jr-signoff">73 de {{ $radio.callsign }}</p><p>期待空中相会 · またお空で · See you on the air</p></footer>
+</section>
+{{- end -}}

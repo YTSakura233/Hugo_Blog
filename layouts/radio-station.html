@@ -1,0 +1,17 @@
+{{/* Stack v4 page layout: keep Stack's base shell and left navigation, omit the right sidebar on this page only. */}}
+{{ define "body-class" }}article-page radio-station-page{{ end }}
+
+{{ define "head" }}
+  <link rel="stylesheet" href="{{ "radio-station/radio-station.css" | relURL }}">
+{{ end }}
+
+{{ define "right-sidebar" }}{{ end }}
+
+{{ define "main" }}
+  <article class="main-article">
+    <div class="article-content">
+      {{ .Content }}
+    </div>
+  </article>
+  {{ partialCached "footer/footer" . }}
+{{ end }}

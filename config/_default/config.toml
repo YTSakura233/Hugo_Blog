@@ -1,5 +1,5 @@
 # Change baseurl before deploy
-baseurl = "http://localhost:1313/"
+baseurl = "https://www.hndsakura.com/"
 locale  = "zh-cn"
 title   = "YTSakura's blog"
 

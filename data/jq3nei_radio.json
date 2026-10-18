@@ -1,0 +1,95 @@
+{
+  "callsign": "JQ3NEI",
+  "qth": "Kyoto City, Japan",
+  "licensed": 2026,
+  "cq_zone": 25,
+  "itu_zone": 45,
+  "radios": [
+    "YAESU FT-65",
+    "YAESU FT-891"
+  ],
+  "email": "",
+  "qsl_image": "https://s1.imagehub.cc/images/2026/10/06/010cf96d2e8b7516aaadf418ea465641.png",
+  "introductions": [
+    {
+      "lang": "zh-CN",
+      "label": "中文",
+      "text": "欢迎来到 JQ3NEI 的页面！我是来自中国北京、现居日本京都市的留学生 HAM。2026 年，我取得了日本业余无线电台执照，目前使用 YAESU FT-65 和 FT-891。期待在空中与你相会，也期待通过无线电结识更多朋友。"
+    },
+    {
+      "lang": "ja",
+      "label": "日本語",
+      "text": "JQ3NEI のページへようこそ！中国・北京出身で、現在は京都市に住んでいる留学生HAMです。2026年に日本のアマチュア無線局免許を取得しました。現在使用している無線機は YAESU FT-65 と FT-891 です。無線を通じて多くの方々と交流し、皆さまと空でお会いできることを楽しみにしています。"
+    },
+    {
+      "lang": "en",
+      "label": "English",
+      "text": "Welcome to JQ3NEI! I am an international student and amateur radio operator from Beijing, China, now living in Kyoto, Japan. I obtained my Japanese amateur radio station license in 2026. My current radios are the YAESU FT-65 and FT-891. I look forward to making new friends through amateur radio and meeting you on the air."
+    }
+  ],
+  "qsl_rules": [
+    {
+      "lang": "zh-CN",
+      "label": "中文",
+      "direct": "QSL 卡片仅接受直寄（Direct）。请勿通过交换局（Bureau）寄送，因为我无法从交换局接收卡片。",
+      "postage": "与我互换卡片时，无需向我支付回寄邮费。",
+      "contact": "请在寄出前通过 Email 联系我，让我提前知道有卡片将寄来。"
+    },
+    {
+      "lang": "ja",
+      "label": "日本語",
+      "direct": "QSLカードはダイレクトのみです。ビューロー経由では受け取れませんので、ビューロー経由での発送はお控えください。",
+      "postage": "カードを交換していただける場合、返信用の送料を私にお送りいただく必要はありません。",
+      "contact": "発送前に、カードを送る旨をメールでお知らせください。"
+    },
+    {
+      "lang": "en",
+      "label": "English",
+      "direct": "Please send QSL cards by direct mail only. Please do not send cards through the bureau, as I cannot receive them that way.",
+      "postage": "When exchanging cards with me, you do not need to send me return postage.",
+      "contact": "Please email me before mailing your card so I know to expect it."
+    }
+  ],
+  "awards": [
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/f16b629c9e41ce2161feb8965b0fb592.jpg",
+      "caption": "JQ3NEI 获奖图片 01"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/042c11fa400575bca6aaed9848399b8f.jpg",
+      "caption": "JQ3NEI 获奖图片 02"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/88ad821b6f6447cf5188be367b31d28e.jpg",
+      "caption": "JQ3NEI 获奖图片 03"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/889f76e0977807652e60f04ae56f01fb.jpg",
+      "caption": "JQ3NEI 获奖图片 04"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/571d2be7edef9f6488ebfa9adbf78a8a.jpg",
+      "caption": "JQ3NEI 获奖图片 05"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/b3a6997fb4077aacfe9c5193fbac812a.jpg",
+      "caption": "JQ3NEI 获奖图片 06"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/27c76fd42cbc0eda02812b0de7166757.jpg",
+      "caption": "JQ3NEI 获奖图片 07"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/8301148c70b80d19b24f85f59fa6c84e.jpg",
+      "caption": "JQ3NEI 获奖图片 08"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/4b7ca4c7aeb38366bee5aa6a93dc0de0.jpg",
+      "caption": "JQ3NEI 获奖图片 09"
+    },
+    {
+      "url": "https://s1.imagehub.cc/images/2026/10/09/6d2d1c2f45181e37933786684af0455e.jpg",
+      "caption": "JQ3NEI 获奖图片 10"
+    }
+  ]
+}
