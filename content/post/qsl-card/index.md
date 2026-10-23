@@ -29,6 +29,9 @@ https://www.qrz.com/db/JQ3NEI
 - BG0JU
 - BI3TKL
 - JG3FSK
+- JA8YAC
+- DS2BSK
+- N5IF
 
 (排名不分先后)
 (截止至2026年10月23日)
